@@ -150,7 +150,7 @@ const Index = () => {
       <Header />
       
       {/* Announcement Banner */}
-      <AnnouncementBanner message="Admissions open for BSc CSIT and BCA programs for the upcoming academic year. Apply before June 30th." />
+      <AnnouncementBanner message="Admissions open for BSc CSIT and BCA programs." />
       
       {/* Welcome Popup */}
       <WelcomePopup />
