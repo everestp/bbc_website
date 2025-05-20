@@ -50,29 +50,48 @@ const Index = () => {
   // Sample testimonials data
   const testimonials = [
     {
+      id: 0,
+      name: "Everest Paudel",
+      photo: "/everest.jpeg",
+      course: "BSc CSIT",
+      year: "Class of 2021",
+      quote: "Being a part of Banke Bageshwori Campus has been a transformative experience for me. The campus environment is not only academically enriching but also very supportive and inclusive. What I appreciate the most is the dedication of the faculty members who are always ready to guide and mentor students. The well-facilitated computer labs and access to modern learning tools have greatly enhanced my technical skills. Furthermore, the extracurricular opportunities have helped me build confidence and leadership abilities. I truly believe this campus is an ideal place for anyone aspiring to excel in the IT field.",
+    },
+    {
       id: 1,
-      name: "Sarah Johnson",
-      photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80",
+      name: "Dil Bahadur Roka",
+      photo: "/diroka.jpg",
       course: "BSc CSIT",
       year: "Class of 2022",
-      quote: "My experience at Campus has been transformative. The faculty support and practical approach to learning has prepared me well for my career in software development.",
+      quote: "I am Proud to be BBCians because its attentiveness towards its student. What I like most about this Campus is its friendly environment, well qualified lecturers, well equipped computer lab, and many more. This campus has provided me an opulent opportunity to develop professionally as well academically. It provides a truly vibrant community in both academic and extra curricular activities, which prompts me to move beyond my limitation and strive for the best. Teaching strategies makes comfortable which proves that learning environment is pretty good. So if any locking forward for carving their future, BBC is the best place to be"
     },
     {
       id: 2,
-      name: "Michael Chen",
-      photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80",
+      name: "Bishwas  Bagle",
+      photo: "/Biswash.jpg",
       course: "BCA",
       year: "Class of 2023",
-      quote: "The project-based learning approach at Campus gave me hands-on experience that employers value. I secured a great job even before graduation.",
+      quote: "After thinking of making a career in the IT field, I was in the search of a college that would fit my expectations. Gladly, Banke Bageshwori Campus fulfilled my expectations.  Good infrastructure and a dedicated team of faculty members are the key factors of this campus. A well-managed library and computer lab have helped me a lot in my study and progress. The continuous guidance from teachers always motivates me, so if anyone asks me, I would proudly suggest that college without a doubt.",
     },
     {
       id: 3,
-      name: "Priya Sharma",
-      photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80",
+      name: "Nirmesh chaudhary",
+      photo: "/Nirpesh.jpg",
       course: "BSc CSIT",
       year: "Class of 2021",
-      quote: "The supportive community and networking opportunities at Campus helped me build connections that continue to benefit my professional growth.",
-    },
+      quote: "I think the best think I did for my future to study IT is that I choose this campus over many others.What I like the most about this campus is its friendly environment, well qualified teachers, well equipped computer lab, library and so on.Throughout my campus life, This Campus has provided me ample opportunity to develop professionally and academically which has been incredibly rewarding experience for me.Thus, I would recommend anyone who is seeking for studying IT course can join this Campus.",
+    }
+    ,
+    {
+      id: 3,
+      name: "Sagar Neupane",
+      photo: "/Sagar.jpg",
+      course: "BSc CSIT",
+      year: "Class of 2021",
+      quote: "It's a great pleasure for me to be the student of BBC Campus. When I got enrolled at BBC as a B.Sc.CSIT student, all the members of BBC were very helpful and supporting. I feel very lucky because I got chance to study B.Sc.CSIT at BBC Campus who has secure my future in the IT related sector. In BBC students can get all those opportunity whatever they need in their IT building career. It is obvious the result of outstanding management practice and excellent teachers so that we can be able to visualize the proper direction to meet successful career ahead. The library facility, staff members and faculty members are well at BBC Campus.",
+    }
+  
+    
   ];
 
   // Sample faculty members data
@@ -164,60 +183,14 @@ const Index = () => {
         {/* Featured Courses Section */}
         <FeaturedCourses />
         
-        {/* Stats Section */}
-        <section className="py-16 px-4">
-          <div className="container mx-auto">
-            <CampusStats />
-          </div>
-        </section>
+        
+      
         
         {/* Faculty Members Section */}
         <FacultyMembers members={facultyMembers} className="bg-gray-50 dark:bg-gray-900" />
-        
-        {/* Notice Board Section */}
-        <section className="py-16 px-4">
-          <div className="container mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              <div className="lg:col-span-2">
-                <h2 className="text-3xl font-bold mb-6">Latest Campus Updates</h2>
-                <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-2xl">
-                  Stay informed with the latest news, events, and announcements from our campus. We regularly update our notice board with important information.
-                </p>
-                <div className="bg-campus-blue text-white p-6 rounded-lg mb-8">
-                  <h3 className="text-xl font-bold mb-2">Upcoming Orientation</h3>
-                  <p>
-                    New student orientation for the upcoming batch will be held on June 15th, 2023. All admitted students are required to attend.
-                  </p>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-                    <h3 className="text-lg font-bold mb-2 text-campus-blue dark:text-blue-400">
-                      Industry Workshops
-                    </h3>
-                    <p className="text-gray-700 dark:text-gray-300">
-                      Regular workshops by industry experts to keep you updated with the latest technologies and trends.
-                    </p>
-                  </div>
-                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-                    <h3 className="text-lg font-bold mb-2 text-campus-blue dark:text-blue-400">
-                      Placement Support
-                    </h3>
-                    <p className="text-gray-700 dark:text-gray-300">
-                      Dedicated placement cell to help students find internships and job opportunities.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
-              <div>
-                <NoticeBoard notices={notices} />
-              </div>
-            </div>
-          </div>
-        </section>
-        
-        {/* Testimonials Section */}
-        <StudentTestimonials testimonials={testimonials} />
+         <StudentTestimonials testimonials={testimonials} />
+     
+       
       </main>
       
       <Footer />

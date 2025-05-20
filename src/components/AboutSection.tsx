@@ -109,23 +109,7 @@ const AboutSection = () => {
           </div>
         </div>
 
-        {/* Call to Action */}
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-8 md:p-12 shadow-xl">
-          <div className="text-center">
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">Ready to Shape Your Future?</h3>
-            <p className="text-blue-100 text-lg max-w-2xl mx-auto mb-8">
-              Join Banke Bageshwori Campus and embark on a journey to become a skilled IT professional ready for the challenges of tomorrow.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-blue-700 hover:bg-blue-50 py-3 px-6 rounded-lg font-semibold transition-colors duration-300 shadow-md">
-                Apply Now
-              </button>
-              <button className="bg-transparent text-white border-2 border-white hover:bg-white/10 py-3 px-6 rounded-lg font-semibold transition-colors duration-300">
-                Contact Us
-              </button>
-            </div>
-          </div>
-        </div>
+      
       </div>
     </section>
   );

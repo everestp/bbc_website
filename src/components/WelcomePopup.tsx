@@ -39,7 +39,10 @@ const WelcomePopup = ({
           <DialogTitle className="text-xl font-bold text-campus-blue">{title}</DialogTitle>
         </DialogHeader>
         <div className="py-4">
-          <p className="text-gray-700 dark:text-gray-300">{message}</p>
+          <p className="text-gray-700 dark:text-gray-300">
+          <img src="/admission2081.jpg"/>
+          
+          </p>
         </div>
         <div className="flex justify-end">
           <Button onClick={handleClose} className="bg-campus-blue hover:bg-blue-700">
