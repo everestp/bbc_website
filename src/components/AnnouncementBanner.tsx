@@ -10,7 +10,7 @@ type AnnouncementProps = {
 
 const AnnouncementBanner = ({ 
   message = "🎉 Admission Open! Join our vibrant campus community now! 🎓", 
-  link = "/admissions", 
+  link = "/admission", 
   linkText = "Apply Now" 
 }: AnnouncementProps) => {
   const [isVisible, setIsVisible] = useState(true);
