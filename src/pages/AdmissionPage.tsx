@@ -94,7 +94,7 @@ const AdmissionPage = () => {
                 </div>
               </div>
               
-              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+              {/* <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
                 <div className="bg-campus-blue p-6">
                   <h3 className="text-xl font-bold text-white">Important Dates</h3>
                 </div>
@@ -122,7 +122,7 @@ const AdmissionPage = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
             
             {/* Required Documents */}
@@ -161,7 +161,7 @@ const AdmissionPage = () => {
                     </li>
                     <li className="flex items-center space-x-2">
                       <CheckCircle size={16} className="text-green-600" />
-                      <span className="text-gray-700 dark:text-gray-300">Valid ID proof (Aadhar card, passport, etc.)</span>
+                      <span className="text-gray-700 dark:text-gray-300">Valid ID proof (National Identity Card, passport,CitizenShip etc.)</span>
                     </li>
                     <li className="flex items-center space-x-2">
                       <CheckCircle size={16} className="text-green-600" />
@@ -187,7 +187,7 @@ const AdmissionPage = () => {
         </div>
       </section>
       
-      {/* Fee Structure */}
+      {/* Fee Structure
       <section className="py-12">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -284,10 +284,10 @@ const AdmissionPage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       
       {/* Scholarships */}
-      <section className="py-12 bg-gray-50 dark:bg-gray-900">
+      {/* <section className="py-12 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-center">Scholarships</h2>
@@ -337,7 +337,7 @@ const AdmissionPage = () => {
           </div>
         </div>
       </section>
-      
+       */}
       <Footer />
     </div>
   );
