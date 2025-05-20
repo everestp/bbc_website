@@ -108,15 +108,15 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
                 <MapPin className="text-campus-accent mt-1 flex-shrink-0" size={18} />
-                <span className="text-gray-300">123 Education Street, City, State, Country</span>
+                <span className="text-gray-300">Nepalgunj - 10 Banke</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="text-campus-accent flex-shrink-0" size={18} />
-                <span className="text-gray-300">+1 (123) 456-7890</span>
+                <span className="text-gray-300">081-534570</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="text-campus-accent flex-shrink-0" size={18} />
-                <span className="text-gray-300">info@campus.edu</span>
+                <span className="text-gray-300">info@bbc.edu.np</span>
               </li>
             </ul>
           </div>
@@ -124,7 +124,7 @@ const Footer = () => {
         
         <div className="border-t border-gray-800 mt-10 pt-6">
           <p className="text-center text-gray-400">
-            © {currentYear} Campus. All rights reserved.
+            © {currentYear} Banke Bageshwori Campus. All rights reserved.
           </p>
         </div>
       </div>
