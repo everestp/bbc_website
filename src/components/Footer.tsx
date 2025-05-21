@@ -88,18 +88,8 @@ const Footer = () => {
               <li>
                 <Link to="/courses/bca" className="text-gray-300 hover:text-white transition-colors">BCA - 8 Semesters</Link>
               </li>
-              <li>
-                <Link to="/facilities" className="text-gray-300 hover:text-white transition-colors">Computer Labs</Link>
-              </li>
-              <li>
-                <Link to="/facilities" className="text-gray-300 hover:text-white transition-colors">Library</Link>
-              </li>
-              <li>
-                <Link to="/facilities" className="text-gray-300 hover:text-white transition-colors">Sports</Link>
-              </li>
-              <li>
-                <Link to="/facilities" className="text-gray-300 hover:text-white transition-colors">Student Clubs</Link>
-              </li>
+              
+              
             </ul>
           </div>
           

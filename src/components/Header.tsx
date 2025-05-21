@@ -97,9 +97,7 @@ const Header = () => {
 </Link>
 </NavigationMenuItem>
 <NavigationMenuItem>
-<Link to="/achievements" className="text-gray-700 dark:text-gray-200 hover:text-campus-blue dark:hover:text-blue-400">
-  Achievements
-</Link>
+
 </NavigationMenuItem>
 <NavigationMenuItem>
 <Link to="/notices" className="text-gray-700 dark:text-gray-200 hover:text-campus-blue dark:hover:text-blue-400">
@@ -200,13 +198,7 @@ Apply Now
               >
                 Messages
               </Link>
-              <Link
-                to="/achievements"
-                className="text-gray-700 dark:text-gray-200 hover:text-campus-blue dark:hover:text-blue-400"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Achievements
-              </Link>
+           
               <Link
                 to="/notices"
                 className="text-gray-700 dark:text-gray-200 hover:text-campus-blue dark:hover:text-blue-400"

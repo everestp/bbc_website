@@ -34,14 +34,14 @@ const AdminDashboardPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center">
-              <Link to="/" className="flex items-center space-x-2">
-                <div className="h-8 w-8 rounded-full bg-campus-blue flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">C</span>
-                </div>
-                <span className="text-xl font-bold text-campus-blue dark:text-blue-400">
-                  Admin
-                </span>
-              </Link>
+                     <Link to="/" className="flex items-center space-x-2">
+                          <div className="h-10 w-10 rounded-full bg-campus-blue flex items-center justify-center">
+                            <img src="/logo.jpg" alt="College Logo" className="h-10" />
+                          </div>
+                          <span className="text-2xl font-bold text-campus-blue dark:text-blue-400">
+                            BBC
+                          </span>
+                        </Link>
             </div>
             <div className="flex items-center space-x-4">
               <Link to="/">

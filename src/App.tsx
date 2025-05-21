@@ -23,12 +23,16 @@ import NotFound from "./pages/NotFound";
 // Admin Pages
 import AdminLoginPage from "./pages/AdminLoginPage";
 import AdminDashboardPage from "./pages/AdminDashboardPage";
+import { DataContextProvider } from "./context/DataContext";
 
 const App = () => {
   // Create a new QueryClient instance inside the component
   const queryClient = new QueryClient();
   
   return (
+
+    <DataContextProvider>
+
     <QueryClientProvider client={queryClient}>
       <ThemeProvider defaultTheme="light">
         <TooltipProvider>
@@ -58,6 +62,7 @@ const App = () => {
         </TooltipProvider>
       </ThemeProvider>
     </QueryClientProvider>
+    </DataContextProvider>
   );
 };
 

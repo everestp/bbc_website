@@ -36,9 +36,9 @@ const ContactPage = () => {
                   <div>
                     <h3 className="font-bold text-lg mb-1">Our Location</h3>
                     <p className="text-gray-600 dark:text-gray-300">
-                      123 Education Street<br />
-                      City, State 12345<br />
-                      Country
+                      Nepalgunj -10 Banke<br />
+                      Adarshanagar 21900<br />
+                     Nepal
                     </p>
                   </div>
                 </div>
@@ -50,9 +50,9 @@ const ContactPage = () => {
                   <div>
                     <h3 className="font-bold text-lg mb-1">Phone</h3>
                     <p className="text-gray-600 dark:text-gray-300">
-                      Main: +1 (123) 456-7890<br />
-                      Admission: +1 (123) 456-7891<br />
-                      Administration: +1 (123) 456-7892
+                      081-534570<br />
+                      9843616650<br />
+                     
                     </p>
                   </div>
                 </div>
@@ -64,33 +64,22 @@ const ContactPage = () => {
                   <div>
                     <h3 className="font-bold text-lg mb-1">Email</h3>
                     <p className="text-gray-600 dark:text-gray-300">
-                      General Inquiries: info@campus.edu<br />
-                      Admissions: admission@campus.edu<br />
-                      Support: support@campus.edu
+                      info@bbc.edu.npp<br />
+                      bbcollege2071@gmail.com<br />
+                      
                     </p>
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-4">
-                  <div className="bg-blue-100 dark:bg-blue-900/40 p-3 rounded-full">
-                    <Clock size={24} className="text-campus-blue dark:text-blue-400" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg mb-1">Office Hours</h3>
-                    <p className="text-gray-600 dark:text-gray-300">
-                      Monday - Friday: 9:00 AM - 5:00 PM<br />
-                      Saturday: 9:00 AM - 1:00 PM<br />
-                      Sunday: Closed
-                    </p>
-                  </div>
-                </div>
+                
               </div>
               
               <div className="mt-12">
                 <h3 className="font-bold text-lg mb-4">Connect With Us</h3>
                 <div className="flex space-x-4">
                   <a
-                    href="#"
+                  target="_blank"
+                    href="https://www.facebook.com/bbcnpj"
                     className="bg-gray-100 dark:bg-gray-800 p-3 rounded-full hover:bg-campus-blue hover:text-white transition-colors duration-300"
                     aria-label="Facebook"
                   >
@@ -99,6 +88,7 @@ const ContactPage = () => {
                     </svg>
                   </a>
                   <a
+                  target="_blank" rel="noopener noreferrer"
                     href="#"
                     className="bg-gray-100 dark:bg-gray-800 p-3 rounded-full hover:bg-campus-blue hover:text-white transition-colors duration-300"
                     aria-label="Twitter"
@@ -108,6 +98,7 @@ const ContactPage = () => {
                     </svg>
                   </a>
                   <a
+                  target="_blank" rel="noopener noreferrer"
                     href="#"
                     className="bg-gray-100 dark:bg-gray-800 p-3 rounded-full hover:bg-campus-blue hover:text-white transition-colors duration-300"
                     aria-label="Instagram"
@@ -117,6 +108,7 @@ const ContactPage = () => {
                     </svg>
                   </a>
                   <a
+                  target="_blank" rel="noopener noreferrer"
                     href="#"
                     className="bg-gray-100 dark:bg-gray-800 p-3 rounded-full hover:bg-campus-blue hover:text-white transition-colors duration-300"
                     aria-label="LinkedIn"
@@ -149,7 +141,7 @@ const ContactPage = () => {
               <iframe 
                 title="Campus Location Map"
                 className="w-full h-full border-0"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30591910506!2d-74.25986432970718!3d40.697149422113014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1613754956115!5m2!1sen!2s" 
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d112680.0279585059!2d81.46355629726563!3d28.047363600000004!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3998675a0969bac3%3A0xa4e5934abb9dfd25!2sBanke%20Bageshwori%20Campus!5e0!3m2!1sen!2snp!4v1747813321757!5m2!1sen!2snp" 
                 allowFullScreen
                 loading="lazy"
               ></iframe>
@@ -158,49 +150,7 @@ const ContactPage = () => {
         </div>
       </section>
       
-      {/* FAQ Section */}
-      <section className="py-12 bg-gray-50 dark:bg-gray-900">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
-          <div className="max-w-3xl mx-auto space-y-6">
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-              <h3 className="text-lg font-bold mb-2 text-campus-blue dark:text-blue-400">
-                What are the admission requirements?
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                Admission requirements vary by program. Please visit our Admission page or contact our admission office for specific details about the program you're interested in.
-              </p>
-            </div>
-            
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-              <h3 className="text-lg font-bold mb-2 text-campus-blue dark:text-blue-400">
-                Are scholarships available?
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                Yes, we offer various merit-based and need-based scholarships. Details can be found on our Scholarship page or by contacting our financial aid office.
-              </p>
-            </div>
-            
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-              <h3 className="text-lg font-bold mb-2 text-campus-blue dark:text-blue-400">
-                What facilities are available on campus?
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                Our campus features modern computer labs, a well-stocked library, sports facilities, cafeteria, student lounges, and dedicated areas for project work and group discussions.
-              </p>
-            </div>
-            
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-              <h3 className="text-lg font-bold mb-2 text-campus-blue dark:text-blue-400">
-                Do you provide placement assistance?
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                Yes, we have a dedicated placement cell that helps students with internships and job placements. We regularly organize campus recruitment drives with leading companies.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+     
       
       <Footer />
     </div>
