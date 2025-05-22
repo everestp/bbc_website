@@ -26,7 +26,7 @@ const AnnouncementBanner = ({
         {link && (
           <div className="flex items-center">
             <Link
-              to={link}
+              to={"/admission"}
               className="bg-white text-campus-blue px-4 py-1 rounded-md font-medium hover:bg-gray-100 transition-colors duration-200 text-sm"
             >
               {linkText}

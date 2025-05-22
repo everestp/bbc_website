@@ -9,7 +9,7 @@ interface WelcomePopupProps {
 }
 
 const WelcomePopup = ({ 
-  title = "Welcome to Campus", 
+  title = "Admission Open  !!!!!", 
   message = "Admissions for the next academic session are now open. Apply before the deadline to secure your seat in our BSc CSIT and BCA programs." 
 }: WelcomePopupProps) => {
   const [isOpen, setIsOpen] = useState(false);
