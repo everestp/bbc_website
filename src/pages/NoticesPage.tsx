@@ -1,31 +1,55 @@
-
 import React, { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Calendar } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { NoticeCard } from "@/components/NoticeCard";
 import { useData } from "@/context/DataContext";
 
-type Notice = {
+interface Notice {
+  id: string;
   title: string;
   date: string;
   category: string;
+  content: string;
   important?: boolean;
-};
+}
 
 const NoticesPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const {noticeData} = useData()
+  const { noticeData, isLoading } = useData();
 
+  // Handle loading state
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex flex-col">
+        <Header />
+        <section className="bg-gradient-to-r from-blue-900 to-blue-700 pt-24 pb-10 text-white">
+          <div className="container mx-auto px-4">
+            <h1 className="text-4xl font-bold mb-4 text-white">Notices & Announcements</h1>
+            <p className="text-xl text-gray-100 max-w-3xl">
+              Stay updated with the latest announcements, events, and information from our campus.
+            </p>
+          </div>
+        </section>
+        <section className="py-12 bg-gray-50 dark:bg-gray-900">
+          <div className="container mx-auto px-4 text-center">
+            <p>Loading notices...</p>
+          </div>
+        </section>
+        <Footer />
+      </div>
+    );
+  }
 
   // Filter notices based on search term
-  const filteredNotices = noticeData.filter(notice => 
-    notice.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-    notice.content.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    notice.category.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredNotices = noticeData && Array.isArray(noticeData)
+    ? noticeData.filter(notice => 
+        notice.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+        notice.content.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        notice.category.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    : [];
 
   const importantNotices = filteredNotices.filter(notice => notice.important);
   const academicNotices = filteredNotices.filter(notice => notice.category === "Academic");
@@ -37,7 +61,6 @@ const NoticesPage = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       
-      {/* Page Header */}
       <section className="bg-gradient-to-r from-blue-900 to-blue-700 pt-24 pb-10 text-white">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-bold mb-4 text-white">Notices & Announcements</h1>
@@ -47,11 +70,9 @@ const NoticesPage = () => {
         </div>
       </section>
       
-      {/* Notices Section */}
       <section className="py-12 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            {/* Search Bar */}
             <div className="mb-8">
               <Input
                 type="text"
@@ -62,7 +83,6 @@ const NoticesPage = () => {
               />
             </div>
             
-            {/* Notices Tabs */}
             <Tabs defaultValue="all">
               <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 mb-8">
                 <TabsTrigger value="all">All</TabsTrigger>
@@ -130,8 +150,6 @@ const NoticesPage = () => {
     </div>
   );
 };
-
-
 
 const NoNoticesFound = () => {
   return (
