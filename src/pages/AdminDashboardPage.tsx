@@ -1,6 +1,6 @@
 
-import React, { useState } from "react";
-import { Navigate, Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Navigate, Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,19 +8,28 @@ import { useToast } from "@/components/ui/use-toast";
 import { LogOut, Image, Edit } from "lucide-react";
 import AdminGalleryManager from "@/components/admin/AdminGalleryManager";
 import AdminNoticeManager from "@/components/admin/AdminNoticeManager";
+import { useData } from "@/context/DataContext";
+import authService from "@/appwrite/auth";
 
 const AdminDashboardPage = () => {
   const { toast } = useToast();
   const [activeTab, setActiveTab] = useState("notices");
-  
+  const {user,setUser} = useData()
+  const navigate = useNavigate()
   // Check if logged in
-  const isLoggedIn = localStorage.getItem("adminLoggedIn") === "true";
-  if (!isLoggedIn) {
-    return <Navigate to="/admin/login" />;
-  }
 
-  const handleLogout = () => {
-    localStorage.removeItem("adminLoggedIn");
+
+   useEffect(() => {
+    if (!user) {
+      navigate("admin/login");
+    }
+  }, [navigate]);
+
+
+
+  const handleLogout =  async () => {
+    await authService.logout()
+    setUser(null)
     toast({
       title: "Logged out",
       description: "You have been successfully logged out",

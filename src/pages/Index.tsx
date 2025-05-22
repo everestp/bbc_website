@@ -58,7 +58,16 @@ const Index = () => {
       quote: "Being a part of Banke Bageshwori Campus has been a transformative experience for me. The campus environment is not only academically enriching but also very supportive and inclusive. What I appreciate the most is the dedication of the faculty members who are always ready to guide and mentor students. The well-facilitated computer labs and access to modern learning tools have greatly enhanced my technical skills. Furthermore, the extracurricular opportunities have helped me build confidence and leadership abilities. I truly believe this campus is an ideal place for anyone aspiring to excel in the IT field.",
     },
     {
-      id: 1,
+  id: 1,
+  name: "Chetan Paudel",
+  photo: "/chetan.jpg",
+  course: "BSc CSIT",
+  year: "Class of 2021",
+  quote: "Studying at Banke Bageshwori Campus has been one of the best decisions of my academic journey. The campus provides a dynamic learning atmosphere that encourages both academic and personal growth. I’m especially grateful for the hands-on projects and practical sessions that have strengthened my understanding of core IT concepts. The instructors are approachable and always willing to help, which makes a huge difference. Also, the campus events and tech fests have made learning more fun and interactive. I feel more prepared and confident to take on challenges in the tech world.",
+},
+
+    {
+      id: 2,
       name: "Dil Bahadur Roka",
       photo: "/diroka.jpg",
       course: "BSc CSIT",
@@ -66,7 +75,7 @@ const Index = () => {
       quote: "I am Proud to be BBCians because its attentiveness towards its student. What I like most about this Campus is its friendly environment, well qualified lecturers, well equipped computer lab, and many more. This campus has provided me an opulent opportunity to develop professionally as well academically. It provides a truly vibrant community in both academic and extra curricular activities, which prompts me to move beyond my limitation and strive for the best. Teaching strategies makes comfortable which proves that learning environment is pretty good. So if any locking forward for carving their future, BBC is the best place to be"
     },
     {
-      id: 2,
+      id: 3,
       name: "Bishwas  Bagle",
       photo: "/Biswash.jpg",
       course: "BCA",
@@ -74,7 +83,7 @@ const Index = () => {
       quote: "After thinking of making a career in the IT field, I was in the search of a college that would fit my expectations. Gladly, Banke Bageshwori Campus fulfilled my expectations.  Good infrastructure and a dedicated team of faculty members are the key factors of this campus. A well-managed library and computer lab have helped me a lot in my study and progress. The continuous guidance from teachers always motivates me, so if anyone asks me, I would proudly suggest that college without a doubt.",
     },
     {
-      id: 3,
+      id: 4,
       name: "Nirmesh chaudhary",
       photo: "/Nirpesh.jpg",
       course: "BSc CSIT",
@@ -83,7 +92,7 @@ const Index = () => {
     }
     ,
     {
-      id: 3,
+      id: 5,
       name: "Sagar Neupane",
       photo: "/Sagar.jpg",
       course: "BSc CSIT",

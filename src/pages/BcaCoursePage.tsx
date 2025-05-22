@@ -1,4 +1,3 @@
-
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -13,34 +12,28 @@ const BcaCoursePage = () => {
       number: 1,
       subjects: [
         {
-          code: "BCA101",
-          name: "Computer Fundamentals & Applications",
+          code: "CSC101",
+          name: "Computer Fundamentals",
           creditHours: 3,
-          description: "Introduction to computer systems, hardware, software, and basic applications.",
+          description: "Introduction to computer systems, hardware, software, and basic computing concepts.",
         },
         {
-          code: "BCA102",
+          code: "CSC102",
+          name: "Programming in C",
+          creditHours: 3,
+          description: "Fundamentals of C programming, including data types, control structures, and functions.",
+        },
+        {
+          code: "MTH103",
           name: "Mathematics I",
           creditHours: 3,
-          description: "Set theory, functions, relations, matrices, determinants, and linear algebra.",
+          description: "Basic calculus, algebra, and analytical geometry for computing applications.",
         },
         {
-          code: "BCA103",
-          name: "Digital Logic",
+          code: "ENG104",
+          name: "English I",
           creditHours: 3,
-          description: "Number systems, logic gates, combinational and sequential circuits.",
-        },
-        {
-          code: "BCA104",
-          name: "C Programming",
-          creditHours: 3,
-          description: "C programming concepts, data types, control structures, functions, and arrays.",
-        },
-        {
-          code: "BCA105",
-          name: "English Composition",
-          creditHours: 3,
-          description: "Grammar, vocabulary, writing skills, and communication techniques.",
+          description: "Fundamentals of communication, writing, and comprehension for professional skills.",
         },
       ],
     },
@@ -48,34 +41,28 @@ const BcaCoursePage = () => {
       number: 2,
       subjects: [
         {
-          code: "BCA201",
-          name: "Data Structures & Algorithms",
+          code: "CSC201",
+          name: "Data Structures",
           creditHours: 3,
-          description: "Arrays, linked lists, stacks, queues, trees, graphs, and sorting algorithms.",
+          description: "Study of arrays, linked lists, stacks, queues, and basic algorithms.",
         },
         {
-          code: "BCA202",
+          code: "CSC202",
+          name: "Digital Logic",
+          creditHours: 3,
+          description: "Boolean algebra, logic gates, and design of combinational and sequential circuits.",
+        },
+        {
+          code: "CSC203",
+          name: "Database Management Systems",
+          creditHours: 3,
+          description: "Relational databases, SQL, normalization, and data management techniques.",
+        },
+        {
+          code: "MTH204",
           name: "Mathematics II",
           creditHours: 3,
-          description: "Differential and integral calculus, numerical methods.",
-        },
-        {
-          code: "BCA203",
-          name: "Object-Oriented Programming",
-          creditHours: 3,
-          description: "OOP concepts, classes, objects, inheritance, polymorphism, and encapsulation.",
-        },
-        {
-          code: "BCA204",
-          name: "Financial Accounting",
-          creditHours: 3,
-          description: "Accounting principles, financial statements, and analysis.",
-        },
-        {
-          code: "BCA205",
-          name: "Web Technology",
-          creditHours: 3,
-          description: "HTML, CSS, JavaScript, and basic web development concepts.",
+          description: "Advanced topics in calculus, discrete mathematics, and probability.",
         },
       ],
     },
@@ -83,34 +70,28 @@ const BcaCoursePage = () => {
       number: 3,
       subjects: [
         {
-          code: "BCA301",
-          name: "Database Management Systems",
-          creditHours: 3,
-          description: "Database concepts, ER modeling, SQL, normalization, and transaction management.",
-        },
-        {
-          code: "BCA302",
-          name: "Java Programming",
-          creditHours: 3,
-          description: "Java programming language, object-oriented design, and GUI development.",
-        },
-        {
-          code: "BCA303",
+          code: "CSC301",
           name: "Operating Systems",
           creditHours: 3,
-          description: "Operating system concepts, process management, memory management, and file systems.",
+          description: "Process management, memory allocation, file systems, and system calls.",
         },
         {
-          code: "BCA304",
+          code: "CSC302",
           name: "Computer Networks",
           creditHours: 3,
-          description: "Network architectures, protocols, and communication principles.",
+          description: "Network protocols, architectures, and basics of network security.",
         },
         {
-          code: "BCA305",
-          name: "Statistics and Probability",
+          code: "CSC303",
+          name: "Software Engineering",
           creditHours: 3,
-          description: "Statistical methods, probability distributions, and data analysis.",
+          description: "Software development lifecycle, requirements analysis, and testing methodologies.",
+        },
+        {
+          code: "ACC304",
+          name: "Financial Accounting",
+          creditHours: 3,
+          description: "Principles of accounting, financial statements, and bookkeeping for IT professionals.",
         },
       ],
     },
@@ -118,34 +99,138 @@ const BcaCoursePage = () => {
       number: 4,
       subjects: [
         {
-          code: "BCA401",
-          name: "Software Engineering",
+          code: "CSC401",
+          name: "Web Technology",
           creditHours: 3,
-          description: "Software development lifecycle, requirements engineering, design, testing, and project management.",
+          description: "HTML, CSS, JavaScript, and server-side scripting for web development.",
         },
         {
-          code: "BCA402",
-          name: "Computer Graphics",
+          code: "CSC402",
+          name: "Artificial Intelligence",
           creditHours: 3,
-          description: "Graphics concepts, algorithms, and implementations.",
+          description: "Basics of AI, search algorithms, knowledge representation, and machine learning.",
         },
         {
-          code: "BCA403",
-          name: "Advanced Web Programming",
+          code: "CSC403",
+          name: "Mobile Application Development",
           creditHours: 3,
-          description: "Server-side programming, dynamic web applications, and frameworks.",
+          description: "Development of mobile apps using Android/iOS platforms and frameworks.",
         },
         {
-          code: "BCA404",
+          code: "STA404",
+          name: "Statistics",
+          creditHours: 3,
+          description: "Probability, statistical inference, and data analysis techniques.",
+        },
+      ],
+    },
+    {
+      number: 5,
+      subjects: [
+        {
+          code: "CSC501",
+          name: "Java Programming",
+          creditHours: 3,
+          description: "Object-oriented programming, Java syntax, applets, and GUI development.",
+        },
+        {
+          code: "CSC502",
+          name: "System Analysis and Design",
+          creditHours: 3,
+          description: "System development methodologies, UML, and requirements engineering.",
+        },
+        {
+          code: "CSC503",
+          name: "Computer Organization",
+          creditHours: 3,
+          description: "CPU architecture, memory systems, and input/output mechanisms.",
+        },
+        {
+          code: "ENG504",
+          name: "English II",
+          creditHours: 3,
+          description: "Advanced technical writing and professional communication skills.",
+        },
+      ],
+    },
+    {
+      number: 6,
+      subjects: [
+        {
+          code: "CSC601",
+          name: "Cloud Computing",
+          creditHours: 3,
+          description: "Cloud service models, virtualization, and cloud-based application deployment.",
+        },
+        {
+          code: "CSC602",
+          name: "Data Mining",
+          creditHours: 3,
+          description: "Data preprocessing, clustering, and pattern discovery in large datasets.",
+        },
+        {
+          code: "CSC603",
+          name: "Project I",
+          creditHours: 3,
+          description: "Practical IT project development with design and implementation focus.",
+        },
+        {
+          code: "MGT604",
           name: "Management Information Systems",
           creditHours: 3,
-          description: "Information systems in organizations, management, and decision support systems.",
+          description: "Role of IT in business processes, decision support, and enterprise systems.",
+        },
+      ],
+    },
+    {
+      number: 7,
+      subjects: [
+        {
+          code: "CSC701",
+          name: "Cyber Security",
+          creditHours: 3,
+          description: "Security principles, cryptography, threat analysis, and secure systems design.",
         },
         {
-          code: "BCA405",
-          name: "Scripting Language",
+          code: "CSC702",
+          name: "E-Commerce",
           creditHours: 3,
-          description: "Python/Perl programming for automation and scripting.",
+          description: "E-commerce models, payment systems, and web-based business applications.",
+        },
+        {
+          code: "CSC703",
+          name: "Elective I",
+          creditHours: 3,
+          description: "Specialized topic in IT, such as IoT or data science, based on choice.",
+        },
+        {
+          code: "CSC704",
+          name: "Network Administration",
+          creditHours: 3,
+          description: "Network configuration, management, and troubleshooting techniques.",
+        },
+      ],
+    },
+    {
+      number: 8,
+      subjects: [
+        {
+          code: "CSC801",
+          name: "Internship",
+          creditHours: 3,
+          description: "Real-world IT experience through industry-based practical work.",
+        },
+        {
+          code: "CSC802",
+          name: "Final Project",
+          creditHours: 3,
+          description: "Capstone project integrating BCA concepts with documentation.",
+        },
+        {
+          code: "CSC803",
+          name: "Elective II",
+          creditHours: 3,
+          description: "Advanced IT topic, such as machine learning or blockchain, based on choice.",
         },
       ],
     },
@@ -202,27 +287,27 @@ const BcaCoursePage = () => {
                     <h2 className="text-2xl font-bold mb-4">Key Features</h2>
                     <ul className="space-y-3 text-gray-700 dark:text-gray-300">
                       <li className="flex items-start">
-                        <ArrowUp size={18} className="transform rotate-45 mt-1 mr-2 text-campus-blue" />
+                        <ArrowUp size={18} className="transform rotate-45 mt-1 mr-2 text-campus-blue" aria-hidden="true" />
                         <span>Industry-aligned curriculum with focus on practical applications</span>
                       </li>
                       <li className="flex items-start">
-                        <ArrowUp size={18} className="transform rotate-45 mt-1 mr-2 text-campus-blue" />
+                        <ArrowUp size={18} className="transform rotate-45 mt-1 mr-2 text-campus-blue" aria-hidden="true" />
                         <span>State-of-the-art computer labs and infrastructure</span>
                       </li>
                       <li className="flex items-start">
-                        <ArrowUp size={18} className="transform rotate-45 mt-1 mr-2 text-campus-blue" />
+                        <ArrowUp size={18} className="transform rotate-45 mt-1 mr-2 text-campus-blue" aria-hidden="true" />
                         <span>Expert faculty with academic and industry experience</span>
                       </li>
                       <li className="flex items-start">
-                        <ArrowUp size={18} className="transform rotate-45 mt-1 mr-2 text-campus-blue" />
+                        <ArrowUp size={18} className="transform rotate-45 mt-1 mr-2 text-campus-blue" aria-hidden="true" />
                         <span>Regular workshops, seminars, and guest lectures</span>
                       </li>
                       <li className="flex items-start">
-                        <ArrowUp size={18} className="transform rotate-45 mt-1 mr-2 text-campus-blue" />
+                        <ArrowUp size={18} className="transform rotate-45 mt-1 mr-2 text-campus-blue" aria-hidden="true" />
                         <span>Internship opportunities with leading IT companies</span>
                       </li>
                       <li className="flex items-start">
-                        <ArrowUp size={18} className="transform rotate-45 mt-1 mr-2 text-campus-blue" />
+                        <ArrowUp size={18} className="transform rotate-45 mt-1 mr-2 text-campus-blue" aria-hidden="true" />
                         <span>Minor project in 6th semester and major project in 8th semester</span>
                       </li>
                     </ul>
@@ -248,7 +333,7 @@ const BcaCoursePage = () => {
                       
                       <div className="border-b border-gray-200 dark:border-gray-700 pb-3">
                         <h4 className="font-medium text-campus-blue dark:text-blue-400">Total Credit Hours</h4>
-                        <p className="text-gray-700 dark:text-gray-300">120 Credit Hours</p>
+                        <p className="text-gray-700 dark:text-gray-300">96 Credit Hours</p>
                       </div>
                       
                       <div className="border-b border-gray-200 dark:border-gray-700 pb-3">
@@ -349,23 +434,23 @@ const BcaCoursePage = () => {
                   
                   <ul className="space-y-3 text-gray-700 dark:text-gray-300">
                     <li className="flex items-start">
-                      <ArrowUp size={18} className="transform rotate-45 mt-1 mr-2 text-campus-blue" />
+                      <ArrowUp size={18} className="transform rotate-45 mt-1 mr-2 text-campus-blue" aria-hidden="true" />
                       <span>Master of Computer Applications (MCA)</span>
                     </li>
                     <li className="flex items-start">
-                      <ArrowUp size={18} className="transform rotate-45 mt-1 mr-2 text-campus-blue" />
+                      <ArrowUp size={18} className="transform rotate-45 mt-1 mr-2 text-campus-blue" aria-hidden="true" />
                       <span>Master of Science in Information Technology (MSc IT)</span>
                     </li>
                     <li className="flex items-start">
-                      <ArrowUp size={18} className="transform rotate-45 mt-1 mr-2 text-campus-blue" />
+                      <ArrowUp size={18} className="transform rotate-45 mt-1 mr-2 text-campus-blue" aria-hidden="true" />
                       <span>Master of Business Administration (MBA) with IT specialization</span>
                     </li>
                     <li className="flex items-start">
-                      <ArrowUp size={18} className="transform rotate-45 mt-1 mr-2 text-campus-blue" />
+                      <ArrowUp size={18} className="transform rotate-45 mt-1 mr-2 text-campus-blue" aria-hidden="true" />
                       <span>Master's in Data Science or Artificial Intelligence</span>
                     </li>
                     <li className="flex items-start">
-                      <ArrowUp size={18} className="transform rotate-45 mt-1 mr-2 text-campus-blue" />
+                      <ArrowUp size={18} className="transform rotate-45 mt-1 mr-2 text-campus-blue" aria-hidden="true" />
                       <span>Various specialized certifications in programming, cloud computing, cybersecurity, etc.</span>
                     </li>
                   </ul>

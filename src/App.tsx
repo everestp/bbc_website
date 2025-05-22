@@ -24,7 +24,8 @@ import NotFound from "./pages/NotFound";
 import AdminLoginPage from "./pages/AdminLoginPage";
 import AdminDashboardPage from "./pages/AdminDashboardPage";
 import { DataContextProvider } from "./context/DataContext";
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const App = () => {
   // Create a new QueryClient instance inside the component
   const queryClient = new QueryClient();
@@ -32,7 +33,7 @@ const App = () => {
   return (
 
     <DataContextProvider>
-
+  <ToastContainer position="top-right" autoClose={3000} />
     <QueryClientProvider client={queryClient}>
       <ThemeProvider defaultTheme="light">
         <TooltipProvider>

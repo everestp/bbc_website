@@ -8,148 +8,288 @@ import { ArrowUp } from "lucide-react";
 
 const CsitCoursePage = () => {
   // Sample syllabus data for BSc CSIT
-  const csitSyllabus = [
-    {
-      number: 1,
-      subjects: [
-        {
-          code: "CSC101",
-          name: "Introduction to Computer Science",
-          creditHours: 3,
-          description: "Fundamentals of computer systems, basic concepts and principles of computing.",
-        },
-        {
-          code: "CSC102",
-          name: "C Programming",
-          creditHours: 3,
-          description: "Introduction to C programming language, data types, control structures, functions, arrays, and pointers.",
-        },
-        {
-          code: "CSC103",
-          name: "Digital Logic",
-          creditHours: 3,
-          description: "Number systems, Boolean algebra, logic gates, combinational and sequential circuits.",
-        },
-        {
-          code: "MTH104",
-          name: "Calculus and Analytical Geometry",
-          creditHours: 3,
-          description: "Limits, continuity, differentiation, integration, and their applications.",
-        },
-        {
-          code: "PHY105",
-          name: "Physics I",
-          creditHours: 3,
-          description: "Mechanics, waves, oscillations, and thermodynamics with practical applications.",
-        },
-      ],
-    },
-    {
-      number: 2,
-      subjects: [
-        {
-          code: "CSC201",
-          name: "Discrete Structures",
-          creditHours: 3,
-          description: "Sets, relations, functions, algebraic structures, graph theory, and Boolean algebra.",
-        },
-        {
-          code: "CSC202",
-          name: "Object Oriented Programming",
-          creditHours: 3,
-          description: "OOP concepts, classes, objects, inheritance, polymorphism using C++ and Java.",
-        },
-        {
-          code: "CSC203",
-          name: "Microprocessor",
-          creditHours: 3,
-          description: "Architecture, instruction sets, assembly language programming, and interfacing.",
-        },
-        {
-          code: "MTH204",
-          name: "Linear Algebra",
-          creditHours: 3,
-          description: "Vector spaces, linear transformations, matrices, determinants, and eigenvalues.",
-        },
-        {
-          code: "STA205",
-          name: "Statistics I",
-          creditHours: 3,
-          description: "Descriptive statistics, probability, random variables, and probability distributions.",
-        },
-      ],
-    },
-    {
-      number: 3,
-      subjects: [
-        {
-          code: "CSC301",
-          name: "Data Structures and Algorithms",
-          creditHours: 3,
-          description: "Arrays, linked lists, stacks, queues, trees, graphs, sorting, and searching algorithms.",
-        },
-        {
-          code: "CSC302",
-          name: "Computer Architecture",
-          creditHours: 3,
-          description: "Computer organization, memory, CPU design, I/O systems, and performance evaluation.",
-        },
-        {
-          code: "CSC303",
-          name: "Operating Systems",
-          creditHours: 3,
-          description: "Process management, memory management, file systems, and protection mechanisms.",
-        },
-        {
-          code: "CSC304",
-          name: "Database Management Systems",
-          creditHours: 3,
-          description: "Data modeling, relational databases, SQL, normalization, and transaction management.",
-        },
-        {
-          code: "CSC305",
-          name: "Computer Graphics",
-          creditHours: 3,
-          description: "Graphical primitives, transformations, viewing, hidden surface removal, and rendering.",
-        },
-      ],
-    },
-    {
-      number: 4,
-      subjects: [
-        {
-          code: "CSC401",
-          name: "Theory of Computation",
-          creditHours: 3,
-          description: "Automata theory, formal languages, context-free grammars, and Turing machines.",
-        },
-        {
-          code: "CSC402",
-          name: "Computer Networks",
-          creditHours: 3,
-          description: "Network architectures, protocols, routing algorithms, and network security.",
-        },
-        {
-          code: "CSC403",
-          name: "Software Engineering",
-          creditHours: 3,
-          description: "Software development lifecycle, requirements engineering, design, testing, and project management.",
-        },
-        {
-          code: "CSC404",
-          name: "Artificial Intelligence",
-          creditHours: 3,
-          description: "Knowledge representation, searching techniques, machine learning, and expert systems.",
-        },
-        {
-          code: "CSC405",
-          name: "Web Technologies",
-          creditHours: 3,
-          description: "Web development technologies, frameworks, client-server architecture, and web services.",
-        },
-      ],
-    },
-  ];
+  const csitSyllabus =[
+  {
+    "number": 1,
+    "subjects": [
+      {
+        "code": "CSC114",
+        "name": "Introduction to Information Technology",
+        "creditHours": 3,
+        "description": "Fundamentals of computer systems, basic concepts and principles of computing."
+      },
+      {
+        "code": "CSC115",
+        "name": "C Programming",
+        "creditHours": 3,
+        "description": "Introduction to C programming language, data types, control structures, functions, arrays, and pointers."
+      },
+      {
+        "code": "CSC116",
+        "name": "Digital Logic",
+        "creditHours": 3,
+        "description": "Number systems, Boolean algebra, logic gates, combinational and sequential circuits."
+      },
+      {
+        "code": "MTH117",
+        "name": "Mathematics I",
+        "creditHours": 3,
+        "description": "Limits, continuity, differentiation, integration, and their applications."
+      },
+      {
+        "code": "PHY118",
+        "name": "Physics",
+        "creditHours": 3,
+        "description": "Mechanics, waves, oscillations, and thermodynamics with practical applications."
+      }
+    ]
+  },
+  {
+    "number": 2,
+    "subjects": [
+      {
+        "code": "CSC165",
+        "name": "Discrete Structures",
+        "creditHours": 3,
+        "description": "Sets, relations, functions, algebraic structures, graph theory, and Boolean algebra."
+      },
+      {
+        "code": "CSC166",
+        "name": "Object Oriented Programming",
+        "creditHours": 3,
+        "description": "OOP concepts, classes, objects, inheritance, polymorphism using C++ and Java."
+      },
+      {
+        "code": "CSC167",
+        "name": "Microprocessor",
+        "creditHours": 3,
+        "description": "Architecture, instruction sets, assembly language programming, and interfacing."
+      },
+      {
+        "code": "MTH168",
+        "name": "Mathematics II",
+        "creditHours": 3,
+        "description": "Vector spaces, linear transformations, matrices, determinants, and eigenvalues."
+      },
+      {
+        "code": "STA169",
+        "name": "Statistics I",
+        "creditHours": 3,
+        "description": "Descriptive statistics, probability, random variables, and probability distributions."
+      }
+    ]
+  },
+  {
+    "number": 3,
+    "subjects": [
+      {
+        "code": "CSC211",
+        "name": "Data Structures and Algorithms",
+        "creditHours": 3,
+        "description": "Arrays, linked lists, stacks, queues, trees, graphs, sorting, and searching algorithms."
+      },
+      {
+        "code": "CSC213",
+        "name": "Statistics II",
+        "creditHours": 3,
+        "description": "tatistics, descriptive statistics, probability, sampling, random variables and mathematical expectations, probability distribution, correlation and regression."
+      },
+      {
+        "code": "CSC212",
+        "name": "Numerical Methods",
+        "creditHours": 3,
+        "description": " solving linear and nonlinear equations, interpolation and regression, differentiation and integration, and partial differential equations."
+      },
+      {
+        "code": "CSC304",
+        "name": "Computer Architecture",
+        "creditHours": 3,
+        "description": "instruction set architecture, organization or micro-architecture, and system architecture."
+      },
+      {
+        "code": "CSC305",
+        "name": "Computer Graphics",
+        "creditHours": 3,
+        "description": "Graphical primitives, transformations, viewing, hidden surface removal, and rendering."
+      }
+    ]
+  },
+  {
+    "number": 4,
+    "subjects": [
+      {
+        "code": "CSC262",
+        "name": "Theory of Computation",
+        "creditHours": 3,
+        "description": "Automata theory, formal languages, context-free grammars, and Turing machines."
+      },
+      {
+        "code": "CSC263",
+        "name": "Computer Networks",
+        "creditHours": 3,
+        "description": "Network architectures, protocols, routing algorithms, and network security."
+      },
+      {
+        "code": "CSC403",
+        "name": "Database Management System",
+        "creditHours": 3,
+        "description": "databases, database system concepts and architecture, data modeling using ER diagram, relational model, SQL, relational algebra and calculus, normalization, transaction processing, concurrency control, and database recovery.."
+      },
+      {
+        "code": "CSC266",
+        "name": "Artificial Intelligence",
+        "creditHours": 3,
+        "description": "Knowledge representation, searching techniques, machine learning, and expert systems."
+      },
+      {
+        "code": "CSC264",
+        "name": "Operating system",
+        "creditHours": 3,
+        "description": "operating system components. It consists of process management, deadlocks and process synchronization, memory management techniques, File system implementation, and I/O device management principles."
+      }
+    ]
+  },
+  {
+    "number": 5,
+    "subjects": [
+      {
+        "code": "CSC314",
+        "name": "Design and Analysis of Algorithms",
+        "creditHours": 3,
+        "description": "Algorithm complexity, divide-and-conquer, dynamic programming, and greedy algorithms."
+      },
+      {
+        "code": "CSC315",
+        "name": "System Analysis and Design",
+        "creditHours": 3,
+        "description": "System development methodologies, UML, requirements analysis, and system design."
+      },
+      {
+        "code": "CSC316",
+        "name": "Cryptography",
+        "creditHours": 3,
+        "description": "Encryption techniques, cryptographic protocols, digital signatures, and security models."
+      },
+      {
+        "code": "CSC317",
+        "name": "Simulation and Modeling",
+        "creditHours": 3,
+        "description": "Simulation techniques, discrete event systems, and statistical modeling."
+      },
+      {
+        "code": "CSC318",
+        "name": "Web Technology",
+        "creditHours": 3,
+        "description": "Advanced web development, JavaScript frameworks, APIs, and responsive design."
+      }
+    ]
+  },
+  {
+    "number": 6,
+    "subjects": [
+      {
+        "code": "CSC364",
+        "name": "Software Engineering",
+        "creditHours": 3,
+        "description": "Advanced software development practices, agile methodologies, and quality assurance."
+      },
+      {
+        "code": "CSC366",
+        "name": "E-Governance",
+        "creditHours": 3,
+        "description": "E-governance frameworks, digital government services, and policy implementation."
+      },
+      {
+        "code": "CSC367",
+        "name": "Net Centric Computing",
+        "creditHours": 3,
+        "description": "Distributed systems, cloud computing, and web-based application architectures."
+      },
+      {
+        "code": "CSC365",
+        "name": "Compiler Design and Construction",
+        "creditHours": 3,
+        "description": "Lexical analysis, syntax analysis, code generation, and optimization techniques."
+      },
+      {
+        "code": "CSC379",
+        "name": "Technical Writing",
+        "creditHours": 3,
+        "description": "Technical documentation, report writing, and professional communication in IT."
+      }
+    ]
+  },
+  {
+    "number": 7,
+    "subjects": [
+      {
+        "code": "CSC409",
+        "name": "Advanced Java Programming",
+        "creditHours": 3,
+        "description": "Advanced Java concepts, multithreading, networking, and enterprise applications."
+      },
+      {
+        "code": "CSC410",
+        "name": "Data Mining and Warehousing",
+        "creditHours": 3,
+        "description": "Data preprocessing, clustering, association rules, and data warehouse architectures."
+      },
+      {
+        "code": "MGT411",
+        "name": "Principle of Management",
+        "creditHours": 3,
+        "description": "Management theories, organizational behavior, leadership, and decision-making."
+      },
+      {
+        "code": "CSC412",
+        "name": "Project Work",
+        "creditHours": 3,
+        "description": "Practical application of IT concepts in a guided project with documentation."
+      },
+      {
+        "code": "CSC705",
+        "name": "Elective I",
+        "creditHours": 3,
+        "description": "Specialized topic in computer science chosen based on interest and availability."
+      }
+    ]
+  },
+  {
+    "number": 8,
+    "subjects": [
+      {
+        "code": "CSC462",
+        "name": "Internship",
+        "creditHours": 3,
+        "description": "Industry-based practical experience applying IT skills in real-world projects."
+      },
+      {
+        "code": "CSC461",
+        "name": "Advanced Database",
+        "creditHours": 3,
+        "description": "Distributed databases, NoSQL systems, and advanced query optimization."
+      },
+      {
+        "code": "CSC803",
+        "name": "Final Project",
+        "creditHours": 3,
+        "description": "Capstone project integrating CSIT concepts with comprehensive documentation."
+      },
+      {
+        "code": "CSC466",
+        "name": "Elective II",
+        "creditHours": 3,
+        "description": "Advanced topic in computer science chosen based on specialization."
+      },
+      {
+        "code": "CSC464",
+        "name": "Elective III",
+        "creditHours": 3,
+        "description": "Specialized study in an emerging IT field or advanced CS topic."
+      }
+    ]
+  }
+]
 
   return (
     <div className="min-h-screen flex flex-col">

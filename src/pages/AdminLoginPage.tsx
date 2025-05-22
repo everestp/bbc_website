@@ -8,10 +8,10 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
 import { LockKeyhole, LogIn, Info } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import authService from "@/appwrite/auth";
+import { toast as toast2 } from 'react-toastify';
+import { useData } from "@/context/DataContext";
 
-// This is a simple admin authentication - in a real app, use a proper authentication system
-const ADMIN_USERNAME = "admin";
-const ADMIN_PASSWORD = "campus123";
 
 const AdminLoginPage = () => {
   const [username, setUsername] = useState("");
@@ -19,42 +19,42 @@ const AdminLoginPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const { toast } = useToast();
-
+const {user,setUser}= useData()
   // Check if already logged in
-  const isLoggedIn = localStorage.getItem("adminLoggedIn") === "true";
-  if (isLoggedIn) {
-    return <Navigate to="/admin/dashboard" />;
-  }
+ 
 
-  const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
-    
-    // Simulate network request
-    setTimeout(() => {
-      if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
-        localStorage.setItem("adminLoggedIn", "true");
-        toast({
-          title: "Login successful",
-          description: "Welcome to the admin dashboard",
-          variant: "default",
-        });
-        navigate("/admin/dashboard");
-      } else {
-        toast({
-          title: "Login failed",
-          description: "Invalid username or password",
-          variant: "destructive",
-        });
+
+
+  const loginUser = async (data: { email: string; password: string }) => {
+    try {
+      const session = await authService.login(data);
+      if (session) {
+        const userData = await authService.getCurrentUser();
+        if (userData) {
+          setUser(userData)
+          toast2.success(`Welcome ${userData.name}`)
+          navigate("/admin/dashboard");
+        }
       }
-      setIsLoading(false);
-    }, 800);
+    } catch (error) {
+      console.error("Login error:", error); // Added error handling
+      toast({ description: "Login failed. Please try again.", variant: "destructive" });
+    }
+  }
+  const handleLogin =  async (e: React.FormEvent) => {
+    e.preventDefault();
+
+const data = {
+  email:username,
+  password:password
+}
+await loginUser(data)
+    setIsLoading(false);
+    
+  
   };
 
-  const fillTestCredentials = () => {
-    setUsername(ADMIN_USERNAME);
-    setPassword(ADMIN_PASSWORD);
-  };
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 px-4">
@@ -72,19 +72,7 @@ const AdminLoginPage = () => {
         </CardHeader>
         <form onSubmit={handleLogin}>
           <CardContent className="space-y-4">
-            <Alert className="bg-blue-50 border-blue-200 dark:bg-blue-900/20 dark:border-blue-800">
-              <Info className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-              <AlertDescription className="text-sm text-blue-700 dark:text-blue-300">
-                Test Credentials: Username: <strong>admin</strong>, Password: <strong>campus123</strong>
-                <Button 
-                  variant="link" 
-                  className="p-0 h-auto text-blue-700 dark:text-blue-300 underline font-normal text-sm ml-1"
-                  onClick={fillTestCredentials}
-                >
-                  (Click to fill)
-                </Button>
-              </AlertDescription>
-            </Alert>
+            
             
             <div className="space-y-2">
               <Label htmlFor="username">Username</Label>

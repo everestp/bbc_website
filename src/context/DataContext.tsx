@@ -9,6 +9,7 @@ export const DataContextProvider = ({ children }) => {
   const [noticeData ,setNoticeData] = useState([]);
   const [galleryData ,setGalleryData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [user ,setUser] = useState(null)
 
   const getNotice = async () => {
     try {
@@ -43,7 +44,8 @@ export const DataContextProvider = ({ children }) => {
    galleryData,
    setGalleryData,
    setNoticeData,
-    
+    user,
+    setUser,
     loading,
 
   };
