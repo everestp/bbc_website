@@ -136,9 +136,7 @@ Apply Now
 </Link>
 )
 }
-<Link to="/admin/login" className="text-gray-700 dark:text-gray-200 hover:text-campus-blue dark:hover:text-blue-400">
-<Settings className="w-5 h-5" />
-</Link>
+
 <ThemeToggle />
 </div>
 
