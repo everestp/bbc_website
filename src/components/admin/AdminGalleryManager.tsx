@@ -108,14 +108,27 @@ setLoading(false)
     });
   };
 
-  const handleDeleteItem = (id: string) => {
-    setGalleryItems(galleryItems.filter(item => item.id !== id));
-    toast({
-      title: "Success",
-      description: "Gallery item has been deleted",
-    });
+ 
+ const handleDeleteItem = async (galleryId: string, imageId?: string) => {
+    try {
+      await storageService.deleteImage(galleryId);
+      if (imageId) {
+        await storageService.deleteFile(imageId);
+      }
+      setGalleryItems(galleryData.filter((item) => item.id !== galleryId));
+      toast({
+        title: "Success",
+        description: "Image has been deleted",
+      });
+    } catch (error) {
+      console.error("Error deleting Gallery:", error);
+      toast({
+        title: "Error",
+        description: "Failed to delete Gallery Items",
+        variant: "destructive",
+      });
+    }
   };
-
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
       setSelectedFile(e.target.files[0]);
@@ -165,21 +178,11 @@ setLoading(false)
                 </div>
               </div>
               <div className="flex justify-between mt-4">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => {
-                    setSelectedItem(item);
-                    setIsEditDialogOpen(true);
-                  }}
-                >
-                  <Edit className="mr-2 h-4 w-4" />
-                  Edit
-                </Button>
+               
                 <Button
                   variant="destructive"
                   size="sm"
-                  onClick={() => handleDeleteItem(item.id)}
+                  onClick={() => handleDeleteItem(item.$id, item.imageId)}
                 >
                   <Trash className="mr-2 h-4 w-4" />
                   Delete
@@ -254,62 +257,7 @@ setLoading(false)
       </Dialog>
 
       {/* Edit Item Dialog */}
-      <Dialog open={isEditDialogOpen} onOpenChange={setIsEditDialogOpen}>
-        <DialogContent className="sm:max-w-md">
-          <DialogHeader>
-            <DialogTitle>Edit Gallery Item</DialogTitle>
-          </DialogHeader>
-          {selectedItem && (
-            <div className="space-y-4 py-4">
-              <div className="space-y-2">
-                <Label htmlFor="edit-title">Title</Label>
-                <Input
-                  id="edit-title"
-                  value={selectedItem.title}
-                  onChange={(e) => setSelectedItem({ ...selectedItem, title: e.target.value })}
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="edit-file">Image</Label>
-                <Input id="edit-file" type="file" onChange={handleImageChange} />
-                {selectedFile && (
-                  <div className="text-sm text-muted-foreground">
-                    {selectedFile.name} ({Math.round(selectedFile.size / 1024)} KB)
-                  </div>
-                )}
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="edit-category">Category</Label>
-                <Select
-                  value={selectedItem.category}
-                  onValueChange={(value) => setSelectedItem({ ...selectedItem, category: value })}
-                >
-                  <SelectTrigger>
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="campus">Campus</SelectItem>
-                    <SelectItem value="academic">Academic</SelectItem>
-                    <SelectItem value="events">Events</SelectItem>
-                    <SelectItem value="workshops">Workshops</SelectItem>
-                    <SelectItem value="sports">Sports</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-            </div>
-          )}
-          <DialogFooter>
-            <DialogClose asChild>
-              <Button variant="outline">Cancel</Button>
-            </DialogClose>
-            <Button onClick={handleEditItem} disabled={!selectedItem?.title}>
-              Save Changes
-            </Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
+    
     </div>
   );
 };
