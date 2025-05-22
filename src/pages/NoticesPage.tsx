@@ -5,6 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { NoticeCard } from "@/components/NoticeCard";
 import { useData } from "@/context/DataContext";
+import Navbar from "@/components/Navbar";
 
 interface Notice {
   id: string;
@@ -22,6 +23,9 @@ const NoticesPage = () => {
   // Handle loading state
   if (isLoading) {
     return (
+
+      <>
+    
       <div className="min-h-screen flex flex-col">
         <Header />
         <section className="bg-gradient-to-r from-blue-900 to-blue-700 pt-24 pb-10 text-white">
@@ -39,6 +43,7 @@ const NoticesPage = () => {
         </section>
         <Footer />
       </div>
+      </>
     );
   }
 
