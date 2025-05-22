@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -23,13 +23,18 @@ import NotFound from "./pages/NotFound";
 // Admin Pages
 import AdminLoginPage from "./pages/AdminLoginPage";
 import AdminDashboardPage from "./pages/AdminDashboardPage";
-import { DataContextProvider } from "./context/DataContext";
+import { DataContextProvider, useData } from "./context/DataContext";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const App = () => {
+
+
+
+// Example usage in your app's initialization (e.g., in a useEffect or App component)
+
   // Create a new QueryClient instance inside the component
   const queryClient = new QueryClient();
-  
+
   return (
 
     <DataContextProvider>

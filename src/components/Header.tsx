@@ -14,11 +14,12 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useData } from "@/context/DataContext";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-
+const {user}= useData()
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 20) {
@@ -123,7 +124,18 @@ className="bg-campus-blue hover:bg-blue-700 text-white px-4 py-2 rounded-md tran
 >
 Apply Now
 </Link>
+{
 
+  user? (   <Link to="/admin/login" className="text-gray-700 dark:text-gray-200 hover:text-campus-blue dark:hover:text-blue-400">
+<Button>Go to Console</Button>
+</Link>):(
+    
+    
+    <Link to="/admin/login" className="text-gray-700 dark:text-gray-200 hover:text-campus-blue dark:hover:text-blue-400">
+<Settings className="w-5 h-5" />
+</Link>
+)
+}
 <Link to="/admin/login" className="text-gray-700 dark:text-gray-200 hover:text-campus-blue dark:hover:text-blue-400">
 <Settings className="w-5 h-5" />
 </Link>

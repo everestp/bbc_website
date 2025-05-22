@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -25,22 +25,52 @@ const {user,setUser}= useData()
 
 
 
-  const loginUser = async (data: { email: string; password: string }) => {
-    try {
-      const session = await authService.login(data);
-      if (session) {
-        const userData = await authService.getCurrentUser();
-        if (userData) {
-          setUser(userData)
-          toast2.success(`Welcome ${userData.name}`)
-          navigate("/admin/dashboard");
-        }
+  // Login function with session persistence
+const loginUser = async (data: { email: string; password: string }) => {
+  try {
+    const session = await authService.login(data);
+    if (session) {
+      const userData = await authService.getCurrentUser();
+      if (userData) {
+        // Store userData in localStorage
+        localStorage.setItem('userData', JSON.stringify(userData));
+        setUser(userData);
+        toast2.success(`Welcome ${userData.name}`);
+        navigate("/admin/dashboard");
       }
-    } catch (error) {
-      console.error("Login error:", error); // Added error handling
-      toast({ description: "Login failed. Please try again.", variant: "destructive" });
+      else{
+        setUser(null)
+      }
     }
+  } catch (error) {
+    console.error("Login error:", error);
+    toast({ description: "Login failed. Please try again.", variant: "destructive" });
   }
+};
+
+// Function to restore session on app load
+// const restoreSession = async () => {
+//   try {
+//     const userData = await authService.getCurrentUser(); // account.get()
+//     setUser(userData);
+//     localStorage.setItem('userData', JSON.stringify(userData));
+//     return userData;
+//   } catch (error) {
+//     console.log("No valid session:", error);
+//     setUser(null);
+//     localStorage.removeItem('userData');
+//     return null;
+//   }
+// };
+
+
+// // Example usage in your app's initialization (e.g., in a useEffect or App component)
+// useEffect(() => {
+//   const user = restoreSession();
+//   if (user) {
+//     navigate("/admin/dashboard");
+//   }
+// }, []);
   const handleLogin =  async (e: React.FormEvent) => {
     e.preventDefault();
 

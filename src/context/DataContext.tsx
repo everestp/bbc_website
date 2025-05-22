@@ -1,3 +1,4 @@
+import authService from "@/appwrite/auth";
 import storageService from "@/appwrite/config";
 import { createContext, useContext, useEffect, useState } from "react";
 
@@ -28,11 +29,25 @@ export const DataContextProvider = ({ children }) => {
       console.error("Error fetching Note Data", error);
     }
   };
-
+useEffect(() => {
+        const checkSession = async () => {
+            try {
+                const session = await authService.getCurrentUser();
+                setUser(session); // Set user if session exists
+            } catch (error) {
+              authService.logout()
+                setUser(null); // No active session
+            } finally {
+                setLoading(false);
+            }
+        };
+        checkSession();
+    }, []);
   
 
   useEffect(() => {
     const fetchData = async () => {
+  
       await Promise.all([getNotice(),getGallery()]);
       setLoading(false);
     };

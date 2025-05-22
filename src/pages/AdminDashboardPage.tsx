@@ -14,27 +14,39 @@ import authService from "@/appwrite/auth";
 const AdminDashboardPage = () => {
   const { toast } = useToast();
   const [activeTab, setActiveTab] = useState("notices");
-  const {user,setUser} = useData()
+  const {user,setUser ,noticeData, galleryData} = useData()
   const navigate = useNavigate()
   // Check if logged in
 
 
    useEffect(() => {
     if (!user) {
-      navigate("admin/login");
+      navigate("/admin/login");
     }
   }, [navigate]);
 
 
 
-  const handleLogout =  async () => {
-    await authService.logout()
-    setUser(null)
-    toast({
-      title: "Logged out",
-      description: "You have been successfully logged out",
-    });
-  };
+const handleLogout = async () => {
+  await authService.logout(); // Optional server-side session cleanup
+
+  // Clear user context/state
+  setUser(null);
+
+  // Remove stored user data from localStorage
+  localStorage.removeItem("userData");
+
+  // Redirect to login or home page
+  navigate("/admin/logout");
+
+  // Show toast
+  toast({
+    title: "Logged out",
+    description: "You have been successfully logged out",
+  });
+};
+
+
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
@@ -80,7 +92,7 @@ const AdminDashboardPage = () => {
               <CardDescription>Manage campus notices</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="text-3xl font-bold text-campus-blue">9</div>
+              <div className="text-3xl font-bold text-campus-blue">{noticeData.length}</div>
             </CardContent>
           </Card>
           
@@ -90,7 +102,7 @@ const AdminDashboardPage = () => {
               <CardDescription>Manage media content</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="text-3xl font-bold text-campus-blue">15</div>
+              <div className="text-3xl font-bold text-campus-blue">{galleryData.length}</div>
             </CardContent>
           </Card>
         </div>
