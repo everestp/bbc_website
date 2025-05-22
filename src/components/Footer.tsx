@@ -18,6 +18,7 @@ const Footer = () => {
             <div className="flex space-x-4">
               <a
                 href="https://www.facebook.com/bbcnpj"
+                target="_blank"
                 className="text-gray-300 hover:text-white transition-colors"
                 aria-label="Facebook"
               >
