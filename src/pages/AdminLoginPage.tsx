@@ -11,6 +11,8 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import authService from "@/appwrite/auth";
 import { toast as toast2 } from 'react-toastify';
 import { useData } from "@/context/DataContext";
+import Header from "@/components/Header";
+import Navbar from "@/components/Navbar";
 
 
 const AdminLoginPage = () => {
@@ -25,52 +27,6 @@ const {user,setUser}= useData()
 
 
 
-  // Login function with session persistence
-const loginUser = async (data: { email: string; password: string }) => {
-  try {
-    const session = await authService.login(data);
-    if (session) {
-      const userData = await authService.getCurrentUser();
-      if (userData) {
-        // Store userData in localStorage
-        localStorage.setItem('userData', JSON.stringify(userData));
-        setUser(userData);
-        toast2.success(`Welcome ${userData.name}`);
-        navigate("/admin/dashboard");
-      }
-      else{
-        setUser(null)
-      }
-    }
-  } catch (error) {
-    console.error("Login error:", error);
-    toast({ description: "Login failed. Please try again.", variant: "destructive" });
-  }
-};
-
-// Function to restore session on app load
-// const restoreSession = async () => {
-//   try {
-//     const userData = await authService.getCurrentUser(); // account.get()
-//     setUser(userData);
-//     localStorage.setItem('userData', JSON.stringify(userData));
-//     return userData;
-//   } catch (error) {
-//     console.log("No valid session:", error);
-//     setUser(null);
-//     localStorage.removeItem('userData');
-//     return null;
-//   }
-// };
-
-
-// // Example usage in your app's initialization (e.g., in a useEffect or App component)
-// useEffect(() => {
-//   const user = restoreSession();
-//   if (user) {
-//     navigate("/admin/dashboard");
-//   }
-// }, []);
   const handleLogin =  async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -78,15 +34,30 @@ const data = {
   email:username,
   password:password
 }
-await loginUser(data)
-    setIsLoading(false);
+ try {
+    const session = await authService.login(data);
+    if (session) {
+      const userData = await authService.getCurrentUser();
+      if (userData) {
+
+        setUser(userData);
+        toast2.success(`Welcome ${userData.name}`);
+        navigate("/admin/dashboard");
+      }
     
+    }
+  } catch (error) {
+    console.error("Login error:", error);
+    toast({ description: "Login failed. Please try again.", variant: "destructive" });
+  }
   
   };
 
 
 
   return (
+    <>
+    <Navbar/>
     <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 px-4">
       <Card className="w-full max-w-md shadow-lg">
         <CardHeader className="space-y-1 text-center">
@@ -147,6 +118,7 @@ await loginUser(data)
         </form>
       </Card>
     </div>
+    </>
   );
 };
 

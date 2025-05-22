@@ -26,13 +26,9 @@ import AdminDashboardPage from "./pages/AdminDashboardPage";
 import { DataContextProvider, useData } from "./context/DataContext";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 const App = () => {
 
-
-
-// Example usage in your app's initialization (e.g., in a useEffect or App component)
-
-  // Create a new QueryClient instance inside the component
   const queryClient = new QueryClient();
 
   return (

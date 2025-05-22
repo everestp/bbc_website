@@ -10,6 +10,7 @@ import AdminGalleryManager from "@/components/admin/AdminGalleryManager";
 import AdminNoticeManager from "@/components/admin/AdminNoticeManager";
 import { useData } from "@/context/DataContext";
 import authService from "@/appwrite/auth";
+import { Session } from "inspector/promises";
 
 const AdminDashboardPage = () => {
   const { toast } = useToast();
@@ -21,7 +22,8 @@ const AdminDashboardPage = () => {
 
    useEffect(() => {
     if (!user) {
-      navigate("/admin/login");
+      console.log("Ths is the data  inside user effect of admin dashboard",user)
+      navigate("/");
     }
   }, [navigate]);
 
@@ -32,14 +34,7 @@ const handleLogout = async () => {
 
   // Clear user context/state
   setUser(null);
-
-  // Remove stored user data from localStorage
-  localStorage.removeItem("userData");
-
-  // Redirect to login or home page
-  navigate("/admin/logout");
-
-  // Show toast
+navigate("/admin/login")
   toast({
     title: "Logged out",
     description: "You have been successfully logged out",

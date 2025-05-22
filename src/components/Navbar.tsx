@@ -16,24 +16,10 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useData } from "@/context/DataContext";
 
-const Header = () => {
+const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 const {user}= useData()
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -43,12 +29,12 @@ const {user}= useData()
   
      <header
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled
+        true
           ? "bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-md py-2"
           : "bg-transparent py-4"
       }`}
     >
-      { isScrolled && <div className="container mx-auto px-4">
+      { true && <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-2">
             <div className="h-10 w-10 rounded-full bg-campus-blue flex items-center justify-center">
@@ -273,4 +259,4 @@ const ListItem = ({
   );
 };
 
-export default Header;
+export default Navbar;

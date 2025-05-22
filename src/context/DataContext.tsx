@@ -11,7 +11,7 @@ export const DataContextProvider = ({ children }) => {
   const [galleryData ,setGalleryData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [user ,setUser] = useState(null)
-
+const [session ,setSession]= useState(false)
   const getNotice = async () => {
     try {
       const response = await storageService.getNotice();
@@ -29,30 +29,22 @@ export const DataContextProvider = ({ children }) => {
       console.error("Error fetching Note Data", error);
     }
   };
-useEffect(() => {
-        const checkSession = async () => {
-            try {
-                const session = await authService.getCurrentUser();
-                setUser(session); // Set user if session exists
-            } catch (error) {
-              authService.logout()
-                setUser(null); // No active session
-            } finally {
-                setLoading(false);
-            }
-        };
-        checkSession();
-    }, []);
-  
+
 
   useEffect(() => {
     const fetchData = async () => {
-  
+    
+      setUser(authService.getCurrentUser())
+
       await Promise.all([getNotice(),getGallery()]);
       setLoading(false);
     };
     fetchData();
   }, []);
+
+
+
+
 
   const contextValue = {
    noticeData,
@@ -62,6 +54,9 @@ useEffect(() => {
     user,
     setUser,
     loading,
+    setLoading,
+    session,
+    setSession
 
   };
 
