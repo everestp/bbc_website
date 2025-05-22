@@ -35,30 +35,7 @@ const GalleryPage = () => {
         </div>
       </section>
       
-      {/* Featured Video */}
-      <section className="py-12">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">Featured Video</h2>
-          <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md">
-            <div className="aspect-w-16 aspect-h-9">
-              <iframe
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ" // Replace with actual video URL
-                title="Campus Life Video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                loading="lazy"
-              ></iframe>
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-bold mb-2">Campus Life: Where Learning Meets Fun</h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                Take a virtual tour of our campus and get a glimpse of the vibrant student life, modern facilities, and engaging academic environment.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      
       
       {/* Gallery Submission */}
       <section className="py-12 bg-gray-50 dark:bg-gray-900">
@@ -68,7 +45,7 @@ const GalleryPage = () => {
             If you have captured memorable moments from campus events or activities, we'd love to feature them in our gallery.
           </p>
           <a
-            href="mailto:gallery@campus.edu" // Replace with actual email
+            href="mailto:info@bbc.edu.np" // Replace with actual email
             className="inline-block bg-campus-blue hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium transition-colors"
           >
             Submit Your Media
