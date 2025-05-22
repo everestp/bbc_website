@@ -16,7 +16,7 @@ type GalleryItem = {
   category: string;
   imageId?: string;
   imageUrl?: string;
-  date?: string;
+
 };
 
 const AdminGalleryManager = () => {
@@ -29,11 +29,13 @@ const [loading ,setLoading]= useState<Boolean>(false)
   const [filterCategory, setFilterCategory] = useState("all");
   const { toast } = useToast();
 const {galleryData}  = useData()
-  const [newItem, setNewItem] = useState<Omit<GalleryItem, "id">>({
+  const [newItem, setNewItem] = useState<GalleryItem>({
+    id:"",
     title: "",
     category: "campus",
     imageId: "",
     imageUrl: "",
+   
   });
 
   // Get unique categories
@@ -43,11 +45,6 @@ const {galleryData}  = useData()
     ? galleryData
     : galleryData.filter(item => item.category === filterCategory);
 
-  const formatDate = () => {
-    const date = new Date();
-    const options: Intl.DateTimeFormatOptions = { year: "numeric", month: "long", day: "numeric" };
-    return date.toLocaleDateString("en-US", options);
-  };
 
   const handleAddItem = async () => {
     try {
@@ -67,17 +64,18 @@ const {galleryData}  = useData()
         category: newItem.category,
         imageUrl,
         imageId,
-        date: formatDate(),
+       
       };
 await storageService.postImage(newGalleryItem);
       setGalleryItems([...galleryItems, galleryData]);
       setIsAddDialogOpen(false);
       setNewItem({
-        id:Math.random().toString(36).substring(2, 9),
+        id: "",
         title: "",
         category: "campus",
         imageId: "",
         imageUrl: "",
+       
       });
       setSelectedFile(null);
 setLoading(false)
@@ -134,9 +132,9 @@ setLoading(false)
               <SelectValue placeholder="Filter by Category" />
             </SelectTrigger>
             <SelectContent>
-              {categories.map(category => (
-                <SelectItem key={category} value={category}>
-                  {category.charAt(0).toUpperCase() + category.slice(1)}
+              {galleryData.map(photo => (
+                <SelectItem key={photo.category} value={photo.category}>
+                  {photo.category}
                 </SelectItem>
               ))}
             </SelectContent>

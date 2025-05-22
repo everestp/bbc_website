@@ -99,8 +99,8 @@ const {noticeData} = useData()
         const file = await storageService.uploadFile(selectedFile);
         imageId = file.$id;
         imageUrl = storageService.getFilePreview(imageId);
+        console.log("Does file metadata is coining or  not in thE handlenotice class",imageId,imageUrl,file)
       }
-
       const currentDate = formatDate();
       const noticeData = {
         id: Math.random().toString(36).substring(2, 9),
@@ -137,42 +137,7 @@ const {noticeData} = useData()
     }
   };
 
-  const handleEditNotice = async () => {
-    if (!selectedNotice) return;
 
-    try {
-      let imageUrl = selectedNotice.imageUrl || "";
-      let imageId = selectedNotice.imageId || "";
-
-      if (selectedFile) {
-        if (selectedNotice.imageId) {
-          await storageService.deleteFile(selectedNotice.imageId);
-        }
-        const file = await storageService.uploadFile(selectedFile);
-        imageId = file.$id;
-        imageUrl = storageService.getFilePreview(imageId);
-      }
-
-      const updatedNotice = { ...selectedNotice, imageUrl, imageId };
-      await storageService.updateNotice(updatedNotice.id, updatedNotice);
-
-      setNotices(notices.map((notice) => (notice.id === selectedNotice.id ? updatedNotice : notice)));
-      setIsEditDialogOpen(false);
-      setSelectedFile(null);
-
-      toast({
-        title: "Success",
-        description: "Notice has been updated",
-      });
-    } catch (error) {
-      console.error("Error updating notice:", error);
-      toast({
-        title: "Error",
-        description: "Failed to update notice",
-        variant: "destructive",
-      });
-    }
-  };
 
   const handleDeleteNotice = async (noticeId: string, imageId?: string) => {
     try {
@@ -252,17 +217,7 @@ const {noticeData} = useData()
                 </div>
               </div>
               <div className="flex mt-4 space-x-4">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => {
-                    setSelectedNotice(notice);
-                    setIsEditDialogOpen(true);
-                  }}
-                >
-                  <Edit className="mr-2 h-4 w-4" />
-                  Edit
-                </Button>
+            
                 <Button
                   variant="destructive"
                   size="sm"
@@ -354,85 +309,6 @@ const {noticeData} = useData()
         </DialogContent>
       </Dialog>
 
-      {/* Edit Notice Dialog */}
-      <Dialog open={isEditDialogOpen} onOpenChange={setIsEditDialogOpen}>
-        <DialogContent className="sm:max-w-md">
-          <DialogHeader>
-            <DialogTitle>Edit Notice</DialogTitle>
-          </DialogHeader>
-          {selectedNotice && (
-            <div className="space-y-4 py-4">
-              <div className="space-y-2">
-                <Label htmlFor="edit-title">Title</Label>
-                <Input
-                  id="edit-title"
-                  value={selectedNotice.title}
-                  onChange={(e) =>
-                    setSelectedNotice({ ...selectedNotice, title: e.target.value })
-                  }
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="edit-content">Content</Label>
-                <Textarea
-                  id="edit-content"
-                  value={selectedNotice.content}
-                  onChange={(e) =>
-                    setSelectedNotice({ ...selectedNotice, content: e.target.value })
-                  }
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="edit-category">Category</Label>
-                <Select
-                  value={selectedNotice.category}
-                  onValueChange={(value) =>
-                    setSelectedNotice({ ...selectedNotice, category: value })
-                  }
-                >
-                  <SelectTrigger>
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="Academic">Academic</SelectItem>
-                    <SelectItem value="Admission">Admission</SelectItem>
-                    <SelectItem value="Events">Events</SelectItem>
-                    <SelectItem value="Infrastructure">Infrastructure</SelectItem>
-                    <SelectItem value="Scholarship">Scholarship</SelectItem>
-                    <SelectItem value="Career">Career</SelectItem>
-                    <SelectItem value="Faculty">Faculty</SelectItem>
-                    <SelectItem value="Administration">Administration</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-              <div className="flex items-center gap-4">
-                <Input id="file" type="file" onChange={handleImageChange} className="flex-1" />
-                {selectedFile && (
-                  <div className="text-sm text-muted-foreground">
-                    {selectedFile.name} ({Math.round(selectedFile.size / 1024)} KB)
-                  </div>
-                )}
-              </div>
-              <div className="flex items-center space-x-2">
-                <Switch
-                  id="edit-important"
-                  checked={selectedNotice.important}
-                  onCheckedChange={(checked) =>
-                    setSelectedNotice({ ...selectedNotice, important: checked })
-                  }
-                />
-                <Label htmlFor="edit-important">Mark as Important</Label>
-              </div>
-            </div>
-          )}
-          <DialogFooter>
-            <DialogClose asChild>
-              <Button variant="outline">Cancel</Button>
-            </DialogClose>
-            <Button onClick={handleEditNotice}>Save Changes</Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
     </div>
   );
 };

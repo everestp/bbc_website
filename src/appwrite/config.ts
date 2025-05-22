@@ -213,7 +213,7 @@ export class StorageService {
   }
 
   getFilePreview(fileId: string): string {
-    return this.bucket.getFilePreview(conf.appwriteBucketId, fileId).href;
+    return this.bucket.getFileView(conf.appwriteBucketId, fileId);
   }
 
   async getNotice(): Promise<any[] | undefined> {

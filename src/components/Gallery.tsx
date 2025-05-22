@@ -62,20 +62,13 @@ const Gallery = ({ className = "" }: GalleryProps) => {
                       className="relative group overflow-hidden rounded-xl cursor-pointer h-60 bg-gray-200 dark:bg-gray-700 shadow-md hover:shadow-xl transition-all duration-300"
                       onClick={() => setSelectedItem(item)}
                     >
-                      {item.type === "image" ? (
+                    
                         <img
                           src={item.imageUrl || "https://via.placeholder.com/300x200"}
                           alt={item.title}
                           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                           loading="lazy"
                         />
-                      ) : (
-                        <video
-                          src={item.imageUrl}
-                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                          muted
-                        />
-                      )}
                   
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                         <div className="p-4 w-full">

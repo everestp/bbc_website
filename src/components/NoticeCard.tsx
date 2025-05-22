@@ -17,7 +17,7 @@ Modal.setAppElement("#root"); // Important for accessibility
 
 export const NoticeCard = ({ notice }: { notice: Notice }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+console.log("This is the data  inside the noticecARD",notice)
   return (
     <div
       className={`bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden border-l-4 transition-all duration-200 ${
@@ -44,7 +44,7 @@ export const NoticeCard = ({ notice }: { notice: Notice }) => {
             )}
           </h3>
             {true && (
-          <ImagePreview imageUrl={""}/>
+          <ImagePreview imageUrl={notice.imageUrl}/>
           )}
         </div>
 

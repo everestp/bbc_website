@@ -11,6 +11,7 @@ Modal.setAppElement("#root");
 
 const ImagePreview = ({ imageUrl }: ImagePreviewProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  console.log("Is the ImagePreview component receiving a valid imageUrl?", imageUrl);
 
   return (
     <>
@@ -19,6 +20,7 @@ const ImagePreview = ({ imageUrl }: ImagePreviewProps) => {
         size="sm"
         onClick={() => setIsOpen(true)}
         className="flex items-center gap-2 hover:bg-gray-100"
+        aria-label="Open image preview"
       >
         <Eye className="w-4 h-4" />
         Read
@@ -27,21 +29,22 @@ const ImagePreview = ({ imageUrl }: ImagePreviewProps) => {
       <Modal
         isOpen={isOpen}
         onRequestClose={() => setIsOpen(false)}
-        className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+        className="fixed inset-0 flex items-center justify-center p-4 sm:p-6"
         overlayClassName="fixed inset-0 bg-black bg-opacity-50"
+        contentLabel="Image Preview Modal"
       >
-        <div className="bg-white p-4 rounded-lg max-w-3xl w-full relative">
+        <div className="bg-white p-4 sm:p-6 rounded-lg w-full max-w-[95vw] sm:max-w-4xl max-h-[90vh] relative overflow-auto">
           <button
             onClick={() => setIsOpen(false)}
-            className="absolute top-2 right-2 text-red-600 text-xl"
-            aria-label="Close Image Preview"
+            className="absolute top-2 right-2 text-red-600 text-xl font-bold hover:text-red-800 z-10"
+            aria-label="Close image preview"
           >
             ✖
           </button>
           <img
             src={imageUrl}
-            alt="Preview"
-            className="w-full h-auto object-contain rounded"
+            alt="Image preview"
+            className="w-full h-auto max-h-[80vh] object-contain rounded"
           />
         </div>
       </Modal>
